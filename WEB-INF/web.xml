@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.2//EN"  "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd"> 
+	
+<web-app>
+
+  <context-param>
+         <param-name>PARAMETER_ENCODING</param-name>
+         <param-value>UTF-8</param-value>
+  </context-param>
+
+<servlet> 
+<servlet-name>InitServlet</servlet-name> 
+<servlet-class>ie.wombat.rt.InitServlet</servlet-class>
+<load-on-startup>1</load-on-startup>
+</servlet>
+
+<servlet>
+<servlet-name>ChartServlet</servlet-name>
+<servlet-class>ie.wombat.rt.chart.ChartServlet</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>WxMapIconServlet</servlet-name>
+<servlet-class>ie.wombat.rt.chart.WxMapIconServlet</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>FireEagleConsumer</servlet-name>
+<servlet-class>ie.wombat.rt.fireeagle.FireEagleConsumer</servlet-class>
+</servlet>
+
+<servlet>
+<servlet-name>OAuthCallback</servlet-name>
+<servlet-class>ie.wombat.rt.fireeagle.Callback</servlet-class>
+</servlet>
+	
+<!-- -->
+<!-- Servlet Mapping Section -->
+<!-- -->
+
+<servlet-mapping>
+<servlet-name>ChartServlet</servlet-name>
+<url-pattern>/chart/*</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>WxMapIconServlet</servlet-name>
+<url-pattern>/wxi/*</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>FireEagleConsumer</servlet-name>
+<url-pattern>/fe/*</url-pattern>
+</servlet-mapping>
+
+<servlet-mapping>
+<servlet-name>OAuthCallback</servlet-name>
+<url-pattern>/OAuth/Callback/*</url-pattern>
+</servlet-mapping>
+
+<listener>
+<listener-class>ie.wombat.rt.RequestListener</listener-class>
+</listener>
+
+<locale-encoding-mapping-list>
+<locale-encoding-mapping>
+<locale>en</locale>
+<encoding>UTF-8</encoding>
+</locale-encoding-mapping>
+</locale-encoding-mapping-list>
+
+</web-app>

@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="ie.wombat.rt.tg.TideGaugeRecord" 
+		table="tide_gauge_data">
+		
+		<cache usage="nonstrict-read-write" />
+		
+        <id name="id" column="id" >
+            <generator class="native"/>
+        </id>
+        
+        <property name="gaugeId" column="gauge_id" />
+        <property name="timestamp" column="reading_timestamp" />
+        <property name="waterElevation" column="we_m" />
+        <property name="atmosphericPressure" column="ap_mb" />
+    </class>
+    
+    <class name="ie.wombat.rt.wx.BuoyRecord" table="buoy_data">
+    
+    <cache usage="nonstrict-read-write" />
+    
+    <id name="id" column="id">
+    	<generator class="native" />
+    </id>
+    
+    <property name="timestamp" column="observation_timestamp" />
+    <property name="stationId" column="station_id" />
+    <property name="atmosphericPressure" column="ap" />
+    <property name="pressureTendency" column="pt" />
+    <property name="charPressureTendency" column="cpt" />
+    <property name="windDirection" column="wd" />
+    <property name="windSpeed" column="ws" />
+    <property name="windMaxGustSpeed" column="gs" />
+    <property name="wavePeriod" column="wp" />
+    <property name="waveHeight" column="wh" />
+    <property name="seaTemperature" column="st" />
+    <property name="dryBulbTemperature" column="dbt" />
+    <property name="dewPointTemperature" column="dpt" />
+    <property name="relativeHumidity" column="rh" />
+    <property name="waveDirection" column="wave_d" />
+    <property name="salinity" column="salinity" />
+    <property name="conductivity" column="conductivity" />
+    </class>
+    
+    
+    <class name="ie.wombat.rt.wx.WUStationRecord" 
+    table="wu_stn_data">
+    
+    <cache usage="nonstrict-read-write" />
+    
+    <id name="id" column="id">
+    	<generator class="native" />
+    </id>
+    
+    <property name="timestamp" column="observation_timestamp" />
+    <property name="stationId" column="station_id" />
+    <property name="atmosphericPressure" column="ap_inhg" />
+
+    <property name="windDirection" column="wd_d" />
+    <property name="windSpeed" column="ws_mph" />
+    <property name="windMaxGustSpeed" column="gs_mph" />
+
+	<property name="temperature" column="t_f" />
+    <property name="dewPointTemperature" column="dpt_f" />
+    <property name="relativeHumidity" column="rh_pc" />
+    
+    <property name="precipitation" column="precip_inph" />
+    
+    <property name="csvRecord" column="csv_data" />
+    
+    </class>
+    
+    <class name="ie.wombat.rt.Station" 
+    table="station">
+    
+    <cache usage="read-only" />
+    
+    <id name="id" column="id">
+    	<generator class="native" />
+    </id>
+    
+    <property name="stationId" column="station_id" />
+    <property name="stationType" column="station_type" />
+    <property name="name" />
+    <property name="latitude" />
+    <property name="longitude" />
+    <property name="altitude" column="altitude_m" />
+    <property name="timezone" column="tz" />
+    <property name="timezoneOffset" column="tz_offset_s" />
+    </class>
+    
+    
+     <class name="ie.wombat.rt.wx.NRAStationRecord" 
+    table="nra_stn_data">
+    
+    <cache usage="nonstrict-read-write" />
+    
+    <id name="id" column="id">
+    	<generator class="native" />
+    </id>
+ 	<property name="timestamp" column="observation_timestamp" />
+    <property name="stationId" column="station_id" />
+   	<property name="airTemperature" column="at_c" />
+   	<property name="roadTemperature" column="rt_c" />
+   	<property name="relativeHumidity" column="rh_pc" />
+   	<property name="windSpeed" column="ws_kmph" />
+   	<property name="windDirection" column="wd_d" />
+   	<property name="precipitationStatus" column="precip" />
+   	<property name="roadCondition" column="road_condition" />
+    </class>
+    
+     <class name="ie.wombat.rt.wx.APRSWXStationRecord" 
+    table="aprswx_stn_data">
+    
+    <cache usage="nonstrict-read-write" />
+    
+    <id name="id" column="id">
+    	<generator class="native" />
+    </id>
+ 	<property name="timestamp" column="observation_timestamp" />
+    <property name="stationId" column="station_id" />
+    <property name="atmosphericPressure" column="ap_mb" />
+   	<property name="airTemperature" column="at_f" />
+   	<property name="relativeHumidity" column="rh_pc" />
+   	<property name="windSpeed" column="ws_kn" />
+   	<property name="windMaxGustSpeed" column="gs_kn" />
+   	<property name="windDirection" column="wd_d" />
+   	<property name="precipitationLast60m" column="precip_60m_in" />
+   	<property name="precipitationLast24h" column="precip_24h_in" />
+	<property name="precipitationLastDay" column="precip_lastday_in" />
+	<property name="rawData" column="raw_data" />
+    </class>
+    
+    
+      
+     <class name="ie.wombat.rt.wx.METARRecord" 
+    table="metar_data">
+    
+    <cache usage="nonstrict-read-write" />
+    
+    <id name="id" column="id">
+    	<generator class="native" />
+    </id>
+ 	<property name="timestamp" column="observation_timestamp" />
+    <property name="stationId" column="station_id" />
+    <property name="atmosphericPressure" column="ap_mb" />
+   	<property name="airTemperature" column="at_c" />
+   	<property name="relativeHumidity" column="rh_pc" />
+   	<property name="windSpeed" column="ws_kn" />
+   	<property name="windMaxGustSpeed" column="gs_kn" />
+   	<property name="windDirection" column="wd_d" />
+	<property name="rawData" column="raw_data" />
+    </class>
+    
+    
+    
+    <class name="ie.wombat.rt.eirgrid.WindGenerationRecord" 
+    table="rt_eirgrid_windgen">
+    
+    <cache usage="nonstrict-read-write" />
+    
+    <id name="id" column="id">
+    	<generator class="native" />
+    </id>
+ 	<property name="timestamp" column="observation_timestamp" />
+ 	<property name="power" column="power_mw"/>
+    </class>
+    
+    
+    
+    <class name="ie.wombat.rt.eirgrid.SystemDemandRecord" 
+    table="rt_eirgrid_sysdemand">
+    
+    <cache usage="nonstrict-read-write" />
+    
+    <id name="id" column="id">
+    	<generator class="native" />
+    </id>
+ 	<property name="timestamp" column="observation_timestamp" />
+ 	<property name="power" column="power_mw"/>
+    </class>
+    
+    
+    
+    <class name="ie.wombat.rt.eirgrid.ForecastDemandRecord" 
+    table="rt_eirgrid_forecastdemand">
+    
+    <cache usage="nonstrict-read-write" />
+    
+    <id name="id" column="id">
+    	<generator class="native" />
+    </id>
+ 	<property name="timestamp" column="observation_timestamp" />
+ 	<property name="power" column="power_mw"/>
+    </class>
+    
+    
+    
+</hibernate-mapping>
