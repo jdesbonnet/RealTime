@@ -1,0 +1,2 @@
+ cp *.xml *.properties classes/
+
