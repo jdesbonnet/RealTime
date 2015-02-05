@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="WEB-INF/src"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jfreechart-1.0.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/hibernate3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jcommon-1.0.8.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jweather-0.2.5.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-awt-util.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-bridge.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-css.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-dom.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-ext.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-extension.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-gui-util.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-gvt.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-parser.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-script.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-svg-dom.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-svggen.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-swing.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-transcoder.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-util.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/batik-xml.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/pdf-transcoder.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/wombat-util.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/wombat-template.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-net-1.4.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/wombat-astro.jar"/>
+	<classpathentry kind="src" output="work" path="work"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/oauth-1.2.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/RXTXcomm.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-httpclient-3.1.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/servlet-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jasper.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>
