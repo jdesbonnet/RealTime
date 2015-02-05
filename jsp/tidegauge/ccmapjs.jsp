@@ -514,17 +514,13 @@ function createPrecipOverlay(stnEl, point, stnId, stnName, ps) {
 
     
 function loadGoogleMap() {
-	if ( ! GBrowserIsCompatible()) {
-		return;
-	}
 	
-	map = new GMap2(document.getElementById("map"));
-	map.addControl(new GSmallMapControl());
-	map.addControl(new GMapTypeControl());
-	map.setCenter(new GLatLng(mapCenterLat, mapCenterLon), mapZoom);
-
-	
-	
+	var mapOptions = {
+		center: { lat: 53, lng: -8},
+		zoom: 6
+	};
+	var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            
 	roadMoistIcon = new GIcon();
 	roadMoistIcon.image = fullContextURL + "/gr/weather/moist32.png";
 	roadMoistIcon.iconSize = new GSize(32, 32);

@@ -1,11 +1,9 @@
-<%@page import="ie.wombat.gcs.GoogleMapKeyRegistry"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Calendar"%>
 <%@page import="java.util.Date"%>
 <%
 String uri = request.getScheme() + "://" + request.getServerName() + ":" 
 	+ request.getServerPort() + request.getRequestURI();
-String gkey = GoogleMapKeyRegistry.getInstance().getKey(uri);
 
 SimpleDateFormat hf = new SimpleDateFormat ("dd MMM, HH00 zzz");
 SimpleDateFormat hqlf = new SimpleDateFormat ("yyyyMMddHHmmss");
@@ -32,13 +30,15 @@ width:500px;
 height:660px;
 }
 </style>
-
-<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%=gkey%>"
-	type="text/javascript"></script>
-<script type="text/javascript" src="ccmapjs.jsp"></script>
+<xscript src="http://maps.google.com/maps?file=api&amp;v=2&amp;"></xscript>
+<script src="https://maps.googleapis.com/maps/api/js?libraries=geometry,visualization"></script>
+<script src="ccmapjs.jsp"></script>
+<script>
+google.maps.event.addDomListener(window, 'load', loadGoogleMap);
+</script>
 </head>
 
-<body onLoad="loadGoogleMap()" onunload="GUnload()">
+<body>
 
 <form style="border:0;margin:0;">
 <select onChange="javascript:updateWeatherMap(this.value);">
